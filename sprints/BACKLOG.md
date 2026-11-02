@@ -51,3 +51,5 @@ CELL-047 | P1 | hw | Second WR3000P for multi-hop test | covered by CELL-022 (fo
 CELL-048 | P0 | hw | Pick MT7981B module: HLK-RM65 vs Openembed SOM-7981 (RAM, pinout, cert, price, MOQ, OpenWrt state). ADR 0007b | todo
 CELL-049 | P0 | fw | Module bring-up: DTS, bootloader, PoE PD/PSE GPIO, nRF52840 UART, strap/EEPROM pins; add hw-revA profile | todo
 CELL-050 | P0 | hw | Carrier revA outline + jack positions frozen, handed to enclosure (CELL-014) | todo
+CELL-051 | P1 | hw | Source certified 30 W 802.3at wall-plug injector with 120/230 V plug heads for Outlet SKU | todo
+CELL-052 | P1 | hw | Power budget and thermal check: 25.5 W in, 15.4 W passthrough, sealed metal shell | todo
