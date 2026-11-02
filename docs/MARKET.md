@@ -70,7 +70,9 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 ## 7. Must-have list for Pro v1 (launch blockers)
 - DIP + button + 10 min window join, under 90 s to guest WiFi
 - One-way Seed, Node promotion in app, logged
-- Dual radio, WiFi 6, 802.3at PoE in, USB-C fallback
+- Dual radio, WiFi 6, 802.3at PoE in, one PoE passthrough port, USB-C fallback
+- BLE 5 + 802.15.4 IoT gateway (nRF52840)
+- Per-room PSK on the shared SSID
 - Per-room client isolation, guest VLAN, per-room bandwidth cap
 - Signed A/B OTA with canary and auto-rollback
 - Fleet view: name, site, role, hw-rev, fw, RSSI to upstream, clients
@@ -79,9 +81,7 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - One wired port for the TV
 
 ## 8. Fast follows (v1.x, not launch blockers)
-- PPSK per room
-- BLE module for locks and sensors
-- PoE passthrough port (hw-revB)
+Per ADR 0009, PPSK, the IoT radio and PoE passthrough moved into v1 / hw-revA. Remaining:
 - Satellite-aware mode (cruise)
 - EasyMesh interop as a checkbox, not a dependency
 

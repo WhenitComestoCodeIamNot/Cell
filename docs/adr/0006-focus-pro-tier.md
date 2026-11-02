@@ -1,5 +1,5 @@
 # ADR 0006: Focus on the $100 Pro unit at 65% gross margin
-Date: 2026-11-02 | Status: Accepted | Supersedes launch scope in ADR 0005
+Date: 2026-11-02 | Status: Accepted (price amended to $129 by ADR 0009) | Supersedes launch scope in ADR 0005
 
 ## Decision
 Launch one SKU: Cell Pro, $100 MSRP, 65% gross margin floor. Standard ($50) and Lite ($20) are parked.
