@@ -55,3 +55,11 @@ CELL-051 | P2 | hw | Region cord kits (C7 to NEMA 1-15, CEE 7/16, BS 1363) for t
 CELL-052 | P1 | hw | Power budget and thermal check: 25.5 W in, 15.4 W passthrough, sealed metal shell | todo
 CELL-053 | P1 | hw | End-product safety evaluation (IEC 62368-1) with encapsulated AC-DC module: scope, lab quotes, timeline | todo
 CELL-054 | P0 | hw | Power section design: IRM-30-48, PoE PD, USB-C PD sink, 48 V ORing with priority mains > PoE > USB-C | todo
+CELL-055 | P1 | hw | LiFePO4 pack selection (certified, ~10 Wh) + charger IC design (ADR 0018) | todo
+CELL-056 | P1 | fw | Low-power mode on battery: guest radio off, mesh + heartbeat on | todo
+CELL-057 | P0 | hw | RTC supercap + hold-up capacitance + last-gasp power-loss event | todo
+CELL-058 | P0 | fw | Event schema, metrics, flash ring buffer, store-and-forward (specs/logging-alerting.md) | todo
+CELL-059 | P1 | ctl | Event and metric ingest, index, search, retention | todo
+CELL-060 | P1 | ctl | Alert rules engine with default rules, routing, quiet hours, escalation; channels email/SMS/Slack/Teams/PagerDuty/webhook | todo
+CELL-061 | P1 | ctl | Audit log stream + export | todo
+CELL-062 | P1 | app | Alerts page and Audit log page | todo

@@ -76,6 +76,8 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - Signed A/B OTA with canary and auto-rollback, distributed peer to peer across the site (one download per site)
 - Self-healing mesh backhaul and standards-based roaming (802.11k/v/r) across Cells and the property's own APs
 - Fleet view: name, site, role, hw-rev, fw, RSSI to upstream, clients
+- Full event logging, metrics, alert rules with routing and escalation, audit log (specs/logging-alerting.md)
+- Three power inputs (PoE, universal mains, USB-C) and LiFePO4 ride-through with RTC hold-up (ADR 0017, 0018)
 - Coverage map per floor: signal heat, topology, per-device view, editable layout or uploaded floor plan
 - Brand-agnostic upstream, WPA2/WPA3 PSK
 - Metal shell, lifetime warranty
