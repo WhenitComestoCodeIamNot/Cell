@@ -1,4 +1,4 @@
-# ADR 0005: Launch at $50 and $100; $20 deferred
+# ADR 0005: Pricing tiers (launch scope superseded by ADR 0006)
 Date: 2026-11-02 | Status: Accepted
 
 ## Target: 50% gross margin minimum, direct sales.

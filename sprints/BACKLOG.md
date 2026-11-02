@@ -13,10 +13,12 @@ CELL-009 | P1 | ctl | Canary rollout + telemetry MVP | todo
 CELL-010 | P1 | spec | Decide SPAKE2 vs SAE | todo
 CELL-011 | P1 | spec | Seed also relays traffic? | todo
 CELL-012 | P1 | spec | Two-Seed conflict resolution test cases | todo
-CELL-013 | P2 | hw | Carrier board revA in KiCad: DIP, button, LED, USB-C, passive PoE pads | todo
-CELL-014 | P2 | hw | Enclosure v0 on K2, door-adjacent mount, SoM thermal check | todo
+CELL-013 | P1 | hw | Carrier board revA in KiCad: 802.3at PoE PD, DC-DC, DIP, button, LED, USB-C fallback | todo
+CELL-014 | P2 | hw | Enclosure v0 on K2 (proxy for metal shell), door-adjacent mount, SoM thermal check | todo
 CELL-015 | P2 | ci | compat-gate job parsing COMPAT.md | todo
 CELL-016 | P2 | ci | HIL bench: 3 units, flash on PR, join + iperf test | todo
 CELL-017 | P2 | app | Installer app MVP: open join window, confirm name, promote to Seed | todo
 CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | todo
 CELL-019 | P3 | biz | Cert vendor quotes (unintentional radiator, US + EU) | todo
+CELL-020 | P1 | biz | COGS tracker: live BOM cost per HW rev, alarm if landed > $35 | todo
+CELL-021 | P2 | hw | Quote metal shell at 500/1k/5k (sheet vs die-cast) | todo
