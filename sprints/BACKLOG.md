@@ -6,7 +6,7 @@ CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signe
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
 CELL-005 | P0 | fw | cell-agent daemon: DIP read, Seed/Node role, join window timer | todo
-CELL-006 | P0 | fw | Join protocol v0 implementation (SAE PAKE, config push) | todo
+CELL-006 | P0 | fw | Join protocol v0 implementation (SAE PAKE, config push, then join mesh per ADR 0014) | todo
 CELL-007 | P1 | fw | 4-address WDS bridge to upstream + TX power cap (ADR 0013) | todo
 CELL-008 | P1 | ctl | Review OpenWISP for ideas only; stack decided in ADR 0011 | todo
 CELL-009 | P1 | ctl | Canary rollout + telemetry MVP | todo
@@ -41,3 +41,9 @@ CELL-037 | P1 | app | Coverage map: per-floor signal heat from guest-device RSSI
 CELL-038 | P1 | app | Layout editor: built-in room grid, drag rooms and units, upload floor plan PDF/PNG to trace over, per site and floor | todo
 CELL-039 | P1 | app | Per-device heat: shade floor by one unit's view (what it hears upstream, what neighbours hear from it); re-parent action | todo
 CELL-040 | P1 | fw | Telemetry for map: neighbour RSSI table, per-client RSSI, parent link, every 60 s | todo
+CELL-041 | P0 | fw | 802.11s mesh backhaul with HWMP airtime metric, hysteresis, WDS fallback (ADR 0014) | todo
+CELL-042 | P1 | fw | 802.11k neighbour reports incl. property APs, 802.11v BSS transition, 802.11r within Cell | todo
+CELL-043 | P1 | fw | Steering daemon: client RSSI thresholds, candidate selection, usteer-style coordination over mesh | todo
+CELL-044 | P1 | fw | Gateway election: any unit with good upstream can uplink, cap per Cell (default 3) | todo
+CELL-045 | P1 | fw | Peer firmware distribution: cache, announce, fetch with resume, verify before install (ADR 0015) | todo
+CELL-046 | P2 | ctl | Rollout view shows propagation: who got the image from whom, when | todo

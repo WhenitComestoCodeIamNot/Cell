@@ -73,7 +73,8 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - Dual radio, WiFi 6, 802.3at PoE in, one PoE passthrough port, USB-C fallback
 - BLE 5 + 802.15.4 IoT gateway (nRF52840)
 - Transparent 4-addr bridge: upstream isolation, VLAN and auth pass through unchanged (ADR 0013)
-- Signed A/B OTA with canary and auto-rollback
+- Signed A/B OTA with canary and auto-rollback, distributed peer to peer across the site (one download per site)
+- Self-healing mesh backhaul and standards-based roaming (802.11k/v/r) across Cells and the property's own APs
 - Fleet view: name, site, role, hw-rev, fw, RSSI to upstream, clients
 - Coverage map per floor: signal heat, topology, per-device view, editable layout or uploaded floor plan
 - Brand-agnostic upstream, WPA2/WPA3 PSK

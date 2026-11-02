@@ -14,7 +14,7 @@ Seed (S), Joiner (J). Both have DIP code `c` (6 bits). S holds site key `K_site`
 3. S only transmits `CELL-JOIN` beacons while join window open (600 s after button/app).
 4. J ↔ S run PAKE (SPAKE2, password = c || site_hint). Derive session key `K_s`.
 5. S sends over `K_s`: `K_site`, SSID/PSK (WPA3), guest VLAN id, backhaul channel plan, TX power cap, controller URL + per-device enrollment token, naming ordinal, current FW version + image URL if J is behind.
-6. J ACKs, stores config, reboots into Node role. S logs join to controller with J's MAC and assigned name.
+6. J ACKs, stores config (including mesh ID and mesh key), reboots into Node role and joins the 802.11s backhaul mesh (ADR 0014); it no longer associates to S as a WDS station. S logs join to controller with J's MAC and assigned name.
 7. Rate limit: 1 PAKE attempt per MAC per 60 s. 5 failures → S closes window and alerts app.
 
 ## Naming
