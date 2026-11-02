@@ -34,6 +34,11 @@ chmod +x "$FILES/etc/init.d/cell-agent" "$FILES/usr/sbin/cell-agent" "$FILES"/et
 
 echo ">> building $IB_PROFILE with: $PACKAGES"
 mkdir -p "$WORK/$IB/tmp"
+# The tarball ships host-tool symlinks made on the buildbot; any that dangle here make the prereq check fail.
+if [ -d "$WORK/$IB/staging_dir/host/bin" ]; then
+  find "$WORK/$IB/staging_dir/host/bin" -xtype l -print -delete | sed 's/^/>> removed dangling: /'
+fi
+echo ">> host install: $(command -v install) :: $(install --version 2>&1 | head -1)"
 build() { ( cd "$WORK/$IB" && make "$@" image PROFILE="$IB_PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" BIN_DIR="$OUT/bin" EXTRA_IMAGE_NAME="cell-${FWVER}" ); }
 if ! build; then
   echo "!! prereq check failed in this environment; retrying with FORCE=1 (prebuilt packages, check is advisory)"
