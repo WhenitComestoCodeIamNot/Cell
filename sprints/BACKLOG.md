@@ -7,7 +7,7 @@ CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on 
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
 CELL-005 | P0 | fw | cell-agent daemon: DIP read, Seed/Node role, join window timer | todo
 CELL-006 | P0 | fw | Join protocol v0 implementation (SAE PAKE, config push) | todo
-CELL-007 | P1 | fw | TX power cap + per-room guest VLAN isolation | todo
+CELL-007 | P1 | fw | 4-address WDS bridge to upstream + TX power cap (ADR 0013) | todo
 CELL-008 | P1 | ctl | Review OpenWISP for ideas only; stack decided in ADR 0011 | todo
 CELL-009 | P1 | ctl | Canary rollout + telemetry MVP | todo
 CELL-010 | P1 | spec | Decide SPAKE2 vs SAE | todo
@@ -25,9 +25,9 @@ CELL-021 | P2 | hw | Quote metal shell at 500/1k/5k (sheet vs die-cast) | todo
 CELL-022 | P0 | hw | Order Sprint 0 parts (see sprints/sprint-00.md buy list) | todo
 CELL-023 | P1 | hw | MikroBUS breakout: 8-pos DIP on GPIO + 24C02 EEPROM on I2C | todo
 CELL-024 | P1 | biz | Provisional patent: P1+P2 from docs/MARKET.md, before first public demo | todo
-CELL-025 | P2 | fw | Per-room bandwidth cap + client isolation (launch blocker list, MARKET.md s7) | todo
+CELL-025 | P2 | fw | Per-room bandwidth cap + client isolation | dropped (ADR 0013, inherited from upstream via 4-addr bridge)
 CELL-026 | P3 | fw | Satellite-aware backhaul mode (cruise) | todo
-CELL-027 | P1 | fw | Per-room PSK on shared SSID via hostapd multi-PSK, pushed by Seed (Sprint 2) | todo
+CELL-027 | P1 | fw | Per-room PSK | dropped (ADR 0013, upstream AP feature, pass-through only)
 CELL-028 | P1 | fw | nRF52840 IoT gateway: UART bridge, BLE + 802.15.4, controller exposure | todo
 CELL-029 | P1 | hw | PSE passthrough: part selection, power budget at 25.5 W in / 15 W out, isolation and inrush review | todo
 CELL-030 | P0 | ci | Generate usign keypair offline, store USIGN_SECKEY in repo secrets, commit public key to firmware/files/etc/opkg/keys | todo
@@ -36,3 +36,4 @@ CELL-032 | P2 | app | BLE provisioning over nRF52840 via Capacitor (iOS requires
 CELL-033 | P1 | ctl | OIDC SSO (Entra, Google, Okta, magic link) + per-site RBAC (Owner/Admin/Installer/Viewer) | todo
 CELL-034 | P1 | ctl | Tenant model Org>Site>Cell>Unit + audit log of every join, promotion, OTA, config change | todo
 CELL-035 | P1 | ops | Hosting: VPS + Postgres + Caddy TLS, app.<celldomain>, outbound-only unit transport on 443 | todo
+CELL-036 | P1 | fw | Per-hop throughput telemetry and long-chain warning (we are not the bottleneck) | todo

@@ -27,7 +27,7 @@ What every pro option above has in common: **a cable to every room**. That is th
 
 ## 3. What Cell has that traditional extenders don't
 - Fleet identity: every unit has a name (SITE-F03-R312), a site, a role, a firmware version, and shows up in one controller view.
-- Per-room client isolation and a guest VLAN pushed from the Seed. Extenders bridge everything flat.
+- 4-address bridging so the upstream AP's isolation, VLAN and auth apply to every guest device as if it were on the AP directly. Consumer extenders hide clients behind one MAC and break all of that.
 - Signed, A/B, canaried OTA. Extenders update when a guest clicks a button in a web UI nobody opens.
 - Hardware revision self-reporting at boot, so the fleet view knows which board is where (VERSIONING.md).
 - PoE in (Pro). Extenders are wall-wart only.
@@ -38,7 +38,7 @@ What every pro option above has in common: **a cable to every room**. That is th
 | Multi-port switch with PoE passthrough | Later (hw-revB) | Hotels power IP phones and STBs from the room AP. Adds $6 to $9 COGS. Revisit after 500 units |
 | IoT radio (BLE / Zigbee) | Yes, Pro v2 | Smart locks, thermostats, minibar sensors. The MT7981 has no IoT radio; a $2 BLE module on the carrier gets us there. Big hotel ask |
 | 512+ concurrent clients | No | A room has 2 to 6 devices. Spec sheet vanity |
-| Enterprise RADIUS / 802.1X / PPSK | Partly | Per-room PSK (PPSK) matters for hotels. RADIUS matters for university housing. Put PPSK in Sprint 3 |
+| Enterprise RADIUS / 802.1X / PPSK | No, pass through | The upstream AP does this. Cell bridges transparently so it keeps working (ADR 0013) |
 | Controller licence revenue | Yes, differently | They charge per AP per year. We charge per room per month and the hardware is cheap. Same money, framed as opex the GM already approves |
 | Lifetime warranty (TP-Link) | Match it | Cheap to promise when the shell is metal and the unit has no moving parts |
 
@@ -72,8 +72,7 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - One-way Seed, Node promotion in app, logged
 - Dual radio, WiFi 6, 802.3at PoE in, one PoE passthrough port, USB-C fallback
 - BLE 5 + 802.15.4 IoT gateway (nRF52840)
-- Per-room PSK on the shared SSID
-- Per-room client isolation, guest VLAN, per-room bandwidth cap
+- Transparent 4-addr bridge: upstream isolation, VLAN and auth pass through unchanged (ADR 0013)
 - Signed A/B OTA with canary and auto-rollback
 - Fleet view: name, site, role, hw-rev, fw, RSSI to upstream, clients
 - Brand-agnostic upstream, WPA2/WPA3 PSK
@@ -81,7 +80,7 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - One wired port for the TV
 
 ## 8. Fast follows (v1.x, not launch blockers)
-Per ADR 0009, PPSK, the IoT radio and PoE passthrough moved into v1 / hw-revA. Remaining:
+Per ADR 0009 the IoT radio and PoE passthrough are in v1 / hw-revA. PPSK dropped per ADR 0013. Remaining:
 - Satellite-aware mode (cruise)
 - EasyMesh interop as a checkbox, not a dependency
 
