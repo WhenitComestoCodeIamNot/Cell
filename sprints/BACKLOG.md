@@ -63,3 +63,5 @@ CELL-059 | P1 | ctl | Event and metric ingest, index, search, retention | todo
 CELL-060 | P1 | ctl | Alert rules engine with default rules, routing, quiet hours, escalation; channels email/SMS/Slack/Teams/PagerDuty/webhook | todo
 CELL-061 | P1 | ctl | Audit log stream + export | todo
 CELL-062 | P1 | app | Alerts page and Audit log page | todo
+CELL-063 | P1 | hw | EMC pre-compliance: surge (61000-4-5), ESD (61000-4-2), EFT (61000-4-4) on mains, RJ45, USB-C; lab or bench tester | todo
+CELL-064 | P1 | fw | Power-quality telemetry: input voltage sense, brownout and input-switch events, per-unit counters in console | todo
