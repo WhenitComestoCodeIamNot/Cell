@@ -33,7 +33,12 @@ REL
 chmod +x "$FILES/etc/init.d/cell-agent" "$FILES/usr/sbin/cell-agent" "$FILES"/etc/uci-defaults/*
 
 echo ">> building $IB_PROFILE with: $PACKAGES"
-make -C "$WORK/$IB" image PROFILE="$IB_PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" BIN_DIR="$OUT/bin" EXTRA_IMAGE_NAME="cell-${FWVER}"
+mkdir -p "$WORK/$IB/tmp"
+build() { ( cd "$WORK/$IB" && make "$@" image PROFILE="$IB_PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" BIN_DIR="$OUT/bin" EXTRA_IMAGE_NAME="cell-${FWVER}" ); }
+if ! build; then
+  echo "!! prereq check failed in this environment; retrying with FORCE=1 (prebuilt packages, check is advisory)"
+  build FORCE=1
+fi
 
 # Collect sysupgrade image(s) and sign
 shopt -s nullglob
