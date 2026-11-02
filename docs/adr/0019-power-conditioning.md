@@ -2,7 +2,7 @@
 Date: 2026-11-02 | Status: Accepted | Extends ADR 0017, 0018
 
 ## Decision
-- Online (double-conversion) topology: every input charges the 48 V bus; the LiFePO4 pack sits on that bus; all electronics run from DC-DC off the bus. The load never sees input transients directly. Brownouts, flicker and generator noise become charger ripple.
+- Online (double-conversion) topology: every input charges the 12 V bus; the 4S LiFePO4 pack sits directly on that bus; all electronics run from DC-DC off the bus. The load never sees input transients directly. Brownouts, flicker and generator noise become charger ripple.
 - Surge and transient protection:
   - Mains inlet: fuse, MOV, gas discharge tube, common-mode choke, NTC inrush limiter, ahead of the encapsulated AC-DC module. Target IEC 61000-4-5: 4 kV line to earth, 2 kV line to line.
   - Both RJ45: 1500 V isolation magnetics plus TVS arrays on all four pairs, 2 kV surge, 8 kV contact / 15 kV air ESD. PoE lines protected on the PD and PSE sides.

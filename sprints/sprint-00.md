@@ -20,14 +20,14 @@ Buy list (CELL-022), per ADR 0016. About $300 plus power bench parts below, abou
 | 1 | USB-TTL 3.3 V serial adapter (module console) | $8 | Amazon |
 If SOM-7981 wins CELL-048, order its kit instead of the RM65 kit.
 
-Power bench parts (ADR 0017, 0018, 0019), about $130:
+Power bench parts (ADR 0017, 0018, 0019; 12 V bus), about $145:
 | Qty | Item | Est. | Where |
 |---|---|---|---|
-| 1 | Mean Well IRM-30-48 encapsulated AC-DC module | $15 | Mouser, Amazon |
+| 1 | Mean Well IRM-30-12 encapsulated AC-DC module | $15 | Mouser, Amazon |
 | 1 | IEC C8 panel inlet + C7 cord | $10 | Amazon |
-| 2 | LiFePO4 18650, 3.2 V 1500 mAh, protected | $16 | Amazon |
-| 1 | 2S LiFePO4 BMS board + 18650 holder | $10 | Amazon |
+| 4 | LiFePO4 18650, 3.2 V 1500 mAh | $28 | Amazon |
+| 1 | 4S LiFePO4 BMS board (12.8 V) + 4x18650 holder | $12 | Amazon |
 | 2 | 5.5 V 1 F supercapacitor | $6 | Amazon |
 | 1 | Bench PSU 0-60 V 5 A adjustable | $60-90 | Amazon |
-| 1 | USB-C PD trigger board, 15 V | $8 | Amazon |
+| 1 | USB-C PD trigger board, 12 V | $8 | Amazon |
 Surge parts (TVS, MOV, GDT, chokes), charger IC and ORing controller go on the carrier and are placed by JLCPCB; not hand-bought.
