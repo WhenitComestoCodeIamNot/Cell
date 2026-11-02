@@ -75,6 +75,7 @@ Recommendation: file **one provisional** covering P1 and P2 together before any 
 - Transparent 4-addr bridge: upstream isolation, VLAN and auth pass through unchanged (ADR 0013)
 - Signed A/B OTA with canary and auto-rollback
 - Fleet view: name, site, role, hw-rev, fw, RSSI to upstream, clients
+- Coverage map per floor: signal heat, topology, per-device view, editable layout or uploaded floor plan
 - Brand-agnostic upstream, WPA2/WPA3 PSK
 - Metal shell, lifetime warranty
 - One wired port for the TV

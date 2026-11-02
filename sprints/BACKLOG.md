@@ -37,3 +37,7 @@ CELL-033 | P1 | ctl | OIDC SSO (Entra, Google, Okta, magic link) + per-site RBAC
 CELL-034 | P1 | ctl | Tenant model Org>Site>Cell>Unit + audit log of every join, promotion, OTA, config change | todo
 CELL-035 | P1 | ops | Hosting: VPS + Postgres + Caddy TLS, app.<celldomain>, outbound-only unit transport on 443 | todo
 CELL-036 | P1 | fw | Per-hop throughput telemetry and long-chain warning (we are not the bottleneck) | todo
+CELL-037 | P1 | app | Coverage map: per-floor signal heat from guest-device RSSI, topology view (AP > Seed > Nodes, hop count), clients view | todo
+CELL-038 | P1 | app | Layout editor: built-in room grid, drag rooms and units, upload floor plan PDF/PNG to trace over, per site and floor | todo
+CELL-039 | P1 | app | Per-device heat: shade floor by one unit's view (what it hears upstream, what neighbours hear from it); re-parent action | todo
+CELL-040 | P1 | fw | Telemetry for map: neighbour RSSI table, per-client RSSI, parent link, every 60 s | todo
