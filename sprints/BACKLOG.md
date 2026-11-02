@@ -1,7 +1,7 @@
 # Backlog (single source of truth)
 Format: `CELL-nnn | P0-P3 | area | title | status`
 
-CELL-001 | P0 | hw | Choose SoM for hw-revA prototype (GL.iNet MT7981 board vs bare SoM) | todo
+CELL-001 | P0 | hw | Choose dev board for hw-revA prototype | done (ADR 0007: OpenWrt One + Cudy WR3000)
 CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | todo
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
@@ -22,3 +22,5 @@ CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | 
 CELL-019 | P3 | biz | Cert vendor quotes (unintentional radiator, US + EU) | todo
 CELL-020 | P1 | biz | COGS tracker: live BOM cost per HW rev, alarm if landed > $35 | todo
 CELL-021 | P2 | hw | Quote metal shell at 500/1k/5k (sheet vs die-cast) | todo
+CELL-022 | P0 | hw | Order Sprint 0 parts (see sprints/sprint-00.md buy list) | todo
+CELL-023 | P1 | hw | MikroBUS breakout: 8-pos DIP on GPIO + 24C02 EEPROM on I2C | todo
