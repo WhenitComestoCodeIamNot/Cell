@@ -2,7 +2,7 @@
 Format: `CELL-nnn | P0-P3 | area | title | status`
 
 CELL-001 | P0 | hw | Choose dev board | superseded by ADR 0016 (straight to carrier)
-CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | in-progress (build.sh + workflow written, needs first CI run + USIGN_SECKEY secret)
+CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing sysupgrade images | done 2026-11-02, CI green, 8-9 MB images; signing pending CELL-030
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
 CELL-005 | P0 | fw | cell-agent daemon: DIP read, Seed/Node role, join window timer | todo
@@ -15,7 +15,7 @@ CELL-011 | P1 | spec | Seed also relays traffic? | todo
 CELL-012 | P1 | spec | Two-Seed conflict resolution test cases | todo
 CELL-013 | P0 | hw | Carrier board revA in KiCad: 802.3at PoE PD, single-port PSE passthrough, 2x RJ45, nRF52840 module + UART, DC-DC, DIP, button, LED, USB-C fallback | todo
 CELL-014 | P2 | hw | Enclosure v0 on K2 (proxy for metal shell), door-adjacent mount, SoM thermal check | todo
-CELL-015 | P2 | ci | compat-gate job parsing COMPAT.md | todo
+CELL-015 | P2 | ci | compat-gate job parsing COMPAT.md | done 2026-11-02
 CELL-016 | P2 | ci | HIL bench: 3 units, flash on PR, join + iperf test | todo
 CELL-017 | P1 | app | Installer + fleet UI MVP (React/Vite/Capacitor): fleet table, open join window, confirm name, promote to Seed | todo
 CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | todo
