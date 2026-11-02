@@ -1,5 +1,10 @@
 # Join Protocol v0 (draft)
 
+## Radios, which does what
+- **Unit to unit (join, config, backhaul): WiFi only.** The joiner finds the Seed on the backhaul band. BLE is not used for joining: range is too short for room-to-room and WiFi is the link they keep anyway.
+- **Phone to unit: Bluetooth (nRF52840).** Only for a unit with no network yet (the first Seed at a site, or a unit that lost upstream) and for on-site troubleshooting. Everything else from the app goes through the controller.
+- **Locks, sensors, thermostats: BLE / 802.15.4 via the nRF52840**, after the unit is up.
+
 ## Actors
 Seed (S), Joiner (J). Both have DIP code `c` (6 bits). S holds site key `K_site`, config version `v`.
 
