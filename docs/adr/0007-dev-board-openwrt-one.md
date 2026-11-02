@@ -3,7 +3,7 @@ Date: 2026-11-02 | Status: Accepted | Closes CELL-001
 
 ## Decision
 - Primary bench board: **OpenWrt One** (Banana Pi, MT7981B Filogic 820, 1 GB DDR4, 256 MB NAND + 16 MB NOR recovery). Buy 1 kit.
-- Second node for join testing: **Cudy WR3000** (same MT7981B, 256 MB RAM, 16 MB NOR, 4x GbE). Buy 1, add a second if Sprint 1 needs three.
+- Second node for join testing: **Cudy WR3000P** (same MT7981B, 512 MB RAM, 128 MB NAND, 802.3at/af PoE powered on the 2.5G WAN port, OpenWrt wiki page wr3000p_v1). Buy 1, add a second if Sprint 1 needs three. Amended 2026-11-02: replaces the plain WR3000 (16 MB NOR, no PoE) because the P variant can run A/B partitions and is powered the way the product will be.
 - GL.iNet GL-MT3000 is dropped as the reference board. Same SoC, but $90 class, no PoE, only 2 ports, and its stock firmware adds a flashing detour we don't need.
 
 ## Why the OpenWrt One
@@ -26,7 +26,7 @@ Date: 2026-11-02 | Status: Accepted | Closes CELL-001
 ## Consequences
 - COMPAT.md hw-revA PoE column: "802.3at native (RT5040)".
 - Sprint 0 buy list rewritten. Budget rises to about $200 from $120 because the One kit is $89 to $125 depending on seller and stock. Accepted: it replaces the GL.iNet board, the USB-TTL adapter, and the PoE splitter.
-- Open risk: the One has been in and out of stock. If unavailable at order time, buy 2x Cudy WR3000 and keep CELL-003 on a USB-I2C adapter until the One ships.
+- Open risk: the One has been in and out of stock. If unavailable at order time, buy 2x Cudy WR3000P and keep CELL-003 on a USB-I2C adapter until the One ships.
 
 ## Sources
 - OpenWrt One launch and specs: cnx-software.com, 2024-10-02 ($89 AliExpress, Banana Pi store, kit includes case, PoE module, antennas, PSU)

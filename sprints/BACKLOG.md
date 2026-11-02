@@ -1,7 +1,7 @@
 # Backlog (single source of truth)
 Format: `CELL-nnn | P0-P3 | area | title | status`
 
-CELL-001 | P0 | hw | Choose dev board for hw-revA prototype | done (ADR 0007: OpenWrt One + Cudy WR3000)
+CELL-001 | P0 | hw | Choose dev board for hw-revA prototype | done (ADR 0007: OpenWrt One + Cudy WR3000P)
 CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | todo
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
