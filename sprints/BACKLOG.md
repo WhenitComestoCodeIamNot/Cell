@@ -8,7 +8,7 @@ CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
 CELL-005 | P0 | fw | cell-agent daemon: DIP read, Seed/Node role, join window timer | todo
 CELL-006 | P0 | fw | Join protocol v0 implementation (SAE PAKE, config push) | todo
 CELL-007 | P1 | fw | TX power cap + per-room guest VLAN isolation | todo
-CELL-008 | P1 | ctl | Evaluate OpenWISP vs custom controller, write ADR 0006 | todo
+CELL-008 | P1 | ctl | Review OpenWISP for ideas only; stack decided in ADR 0011 | todo
 CELL-009 | P1 | ctl | Canary rollout + telemetry MVP | todo
 CELL-010 | P1 | spec | Decide SPAKE2 vs SAE | todo
 CELL-011 | P1 | spec | Seed also relays traffic? | todo
@@ -17,7 +17,7 @@ CELL-013 | P1 | hw | Carrier board revA in KiCad: 802.3at PoE PD, single-port PS
 CELL-014 | P2 | hw | Enclosure v0 on K2 (proxy for metal shell), door-adjacent mount, SoM thermal check | todo
 CELL-015 | P2 | ci | compat-gate job parsing COMPAT.md | todo
 CELL-016 | P2 | ci | HIL bench: 3 units, flash on PR, join + iperf test | todo
-CELL-017 | P2 | app | Installer app MVP: open join window, confirm name, promote to Seed | todo
+CELL-017 | P1 | app | Installer + fleet UI MVP (React/Vite/Capacitor): fleet table, open join window, confirm name, promote to Seed | todo
 CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | todo
 CELL-019 | P3 | biz | Cert vendor quotes (unintentional radiator, US + EU) | todo
 CELL-020 | P1 | biz | COGS tracker: live BOM cost per HW rev, alarm if landed > $45 (ADR 0009) | todo
@@ -31,3 +31,5 @@ CELL-027 | P1 | fw | Per-room PSK on shared SSID via hostapd multi-PSK, pushed b
 CELL-028 | P1 | fw | nRF52840 IoT gateway: UART bridge, BLE + 802.15.4, controller exposure | todo
 CELL-029 | P1 | hw | PSE passthrough: part selection, power budget at 25.5 W in / 15 W out, isolation and inrush review | todo
 CELL-030 | P0 | ci | Generate usign keypair offline, store USIGN_SECKEY in repo secrets, commit public key to firmware/files/etc/opkg/keys | todo
+CELL-031 | P1 | ctl | cellctl serve: SQLite mode, enroll + heartbeat gRPC, fleet REST, embed app/dist | todo
+CELL-032 | P2 | app | BLE provisioning over nRF52840 via Capacitor (iOS requires native wrapper) | todo
