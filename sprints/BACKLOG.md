@@ -2,7 +2,7 @@
 Format: `CELL-nnn | P0-P3 | area | title | status`
 
 CELL-001 | P0 | hw | Choose dev board for hw-revA prototype | done (ADR 0007: OpenWrt One + Cudy WR3000P)
-CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | todo
+CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | in-progress (build.sh + workflow written, needs first CI run + USIGN_SECKEY secret)
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
 CELL-005 | P0 | fw | cell-agent daemon: DIP read, Seed/Node role, join window timer | todo
@@ -30,3 +30,4 @@ CELL-026 | P3 | fw | Satellite-aware backhaul mode (cruise) | todo
 CELL-027 | P1 | fw | Per-room PSK on shared SSID via hostapd multi-PSK, pushed by Seed (Sprint 2) | todo
 CELL-028 | P1 | fw | nRF52840 IoT gateway: UART bridge, BLE + 802.15.4, controller exposure | todo
 CELL-029 | P1 | hw | PSE passthrough: part selection, power budget at 25.5 W in / 15 W out, isolation and inrush review | todo
+CELL-030 | P0 | ci | Generate usign keypair offline, store USIGN_SECKEY in repo secrets, commit public key to firmware/files/etc/opkg/keys | todo

@@ -1,0 +1,19 @@
+#!/bin/sh
+# First boot: lock the box down into Cell shape. Runs once, then OpenWrt deletes it.
+# No web UI exists in this image. Management is cell-agent + dropbear (keys only).
+uci -q batch <<UCI
+set system.@system[0].hostname='cell-unprovisioned'
+set system.@system[0].zonename='UTC'
+set dropbear.@dropbear[0].PasswordAuth='off'
+set dropbear.@dropbear[0].RootPasswordAuth='off'
+set dropbear.@dropbear[0].Interface='lan'
+# Bring radios up disabled; cell-agent configures them after join
+set wireless.radio0.disabled='1'
+set wireless.radio1.disabled='1'
+# Node gets its address from the upstream network, never serves DHCP itself
+set network.lan.proto='dhcp'
+delete network.lan.ipaddr
+delete network.lan.netmask
+UCI
+uci commit
+exit 0

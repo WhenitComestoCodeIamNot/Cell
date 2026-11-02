@@ -2,23 +2,58 @@ name: firmware
 on:
   push:
     tags: ['fw-v*']
+    branches: [main]
+    paths: ['firmware/**', 'docs/COMPAT.md', '.github/workflows/firmware.yml']
   pull_request:
-    paths: ['firmware/**', 'docs/COMPAT.md']
+    paths: ['firmware/**', 'docs/COMPAT.md', '.github/workflows/firmware.yml']
+  workflow_dispatch:
 jobs:
   compat-gate:
     runs-on: ubuntu-latest
+    outputs:
+      hwrevs: ${{ steps.gate.outputs.hwrevs }}
     steps:
       - uses: actions/checkout@v4
-      - run: python3 firmware/ci/compat_gate.py docs/COMPAT.md
+      - id: gate
+        run: python3 firmware/ci/compat_gate.py docs/COMPAT.md
   build:
     needs: compat-gate
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        hwrev: ${{ fromJson(needs.compat-gate.outputs.hwrevs || '["hw-revA"]') }}
+        hwrev: ${{ fromJson(needs.compat-gate.outputs.hwrevs) }}
     steps:
       - uses: actions/checkout@v4
-      - run: echo "TODO CELL-002: ImageBuilder for ${{ matrix.hwrev }}"
-      - run: echo "TODO CELL-002: sign with usign key from secrets"
+        with: { fetch-depth: 0 }
+      - name: Tooling
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq zstd build-essential libncurses-dev gawk git gettext libssl-dev rsync unzip python3 file wget usign || sudo apt-get install -y -qq zstd build-essential libncurses-dev gawk git gettext libssl-dev rsync unzip python3 file wget
+      - name: Build usign if apt lacks it
+        run: command -v usign || (git clone --depth 1 https://git.openwrt.org/project/usign.git /tmp/usign && cd /tmp/usign && cmake . && make && sudo make install)
+      - name: Cache ImageBuilder
+        uses: actions/cache@v4
+        with:
+          path: firmware/out/.ib
+          key: ib-${{ hashFiles(format('firmware/profiles/{0}.env', matrix.hwrev)) }}
+      - name: Build ${{ matrix.hwrev }}
+        env:
+          USIGN_SECKEY: ${{ secrets.USIGN_SECKEY }}
+        run: firmware/ci/build.sh "${{ matrix.hwrev }}" "${GITHUB_REF_NAME}"
       - uses: actions/upload-artifact@v4
-        with: { name: 'fw-${{ matrix.hwrev }}', path: firmware/out/ }
+        with:
+          name: fw-${{ matrix.hwrev }}-${{ github.ref_name }}
+          path: |
+            firmware/out/${{ matrix.hwrev }}/*sysupgrade*
+          if-no-files-found: error
+  release:
+    if: startsWith(github.ref, 'refs/tags/fw-v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: dist, merge-multiple: true }
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true

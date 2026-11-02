@@ -1,0 +1,9 @@
+# OpenWrt One bench wiring via MikroBUS (CELL-023). Fill in after the breakout is built.
+# DIP: 8 lines on the MikroBUS GPIOs. STRAP: 2 lines. EEPROM: AT24C02 on MikroBUS I2C, byte 0 = hw rev id.
+DIP_CHIP=gpiochip0
+DIP_LINES="TBD TBD TBD TBD TBD TBD TBD TBD"
+STRAP_CHIP=gpiochip0
+STRAP_LINES="TBD TBD"
+EEPROM_DEV=/sys/bus/i2c/devices/0-0050/eeprom
+# strap value -> hw rev, eeprom byte -> hw rev. Must agree or boot halts.
+# shell has no assoc arrays; agent treats a missing map as bench mode until CELL-003 lands.

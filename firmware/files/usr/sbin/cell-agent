@@ -1,0 +1,40 @@
+#!/bin/sh
+# cell-agent v0: Sprint 0 scope only (CELL-003, CELL-005 skeleton).
+# - Reads /etc/cell-release and the HW rev straps/EEPROM, halts on mismatch (LED code 3).
+# - Reads the 8-position DIP. sw8 ON at boot = factory reset. sw7 ON = Seed candidate.
+# - Logs state. Join protocol (CELL-006) is not implemented yet; this is the frame it drops into.
+# Pin mapping lives in /etc/cell/pins.<hwrev> so the same binary serves every board.
+set -u
+. /etc/cell-release
+PINS="/etc/cell/pins.${CELL_HW_REV}"
+log() { logger -t cell-agent "$*"; echo "cell-agent: $*"; }
+led() { # led <code>: blink pattern on the status LED, code 3 = hw rev mismatch
+  for l in /sys/class/leds/*status* /sys/class/leds/*green* ; do [ -e "$l/trigger" ] || continue
+    echo timer > "$l/trigger"; echo $((1000/$1)) > "$l/delay_on"; echo 500 > "$l/delay_off"; break; done; }
+
+[ -f "$PINS" ] && . "$PINS" || { log "no pin map for $CELL_HW_REV, running in bench mode (no DIP, no EEPROM)"; BENCH=1; }
+
+read_dip() { # prints 8 chars, 1 = ON, sw1 first. Bench mode: all off.
+  [ -n "${BENCH:-}" ] && { echo 00000000; return; }
+  gpioget "$DIP_CHIP" $DIP_LINES | tr -d ' '
+}
+read_hw_strap() { [ -n "${BENCH:-}" ] && { echo "$CELL_HW_REV"; return; }; gpioget "$STRAP_CHIP" $STRAP_LINES | tr -d ' ' | sed "s/^/strap-/"; }
+read_hw_eeprom() { [ -n "${BENCH:-}" ] && { echo "$CELL_HW_REV"; return; }; dd if="$EEPROM_DEV" bs=1 count=1 2>/dev/null | od -An -tx1 | tr -d ' ' | sed "s/^/eeprom-/"; }
+
+case "${1:-run}" in
+  run)
+    log "boot fw=$CELL_FW_VERSION hw=$CELL_HW_REV profile=$CELL_PROFILE"
+    S="$(read_hw_strap)"; E="$(read_hw_eeprom)"
+    if [ -z "${BENCH:-}" ] && [ "${STRAP_MAP[$S]:-}" != "${EEPROM_MAP[$E]:-x}" ]; then
+      log "HW REV MISMATCH strap=$S eeprom=$E, halting"; led 3; exit 1
+    fi
+    DIP="$(read_dip)"; CODE="${DIP%??}"; SW7="$(echo "$DIP" | cut -c7)"; SW8="$(echo "$DIP" | cut -c8)"
+    if [ "$SW8" = 1 ]; then log "sw8 ON: factory reset"; firstboot -y && reboot; exit 0; fi
+    ROLE=node; [ "$SW7" = 1 ] && ROLE=seed
+    log "dip code=$CODE role=$ROLE"
+    mkdir -p /tmp/cell; printf 'code=%s\nrole=%s\n' "$CODE" "$ROLE" > /tmp/cell/state
+    # CELL-006 drops in here: seed -> wait for button/app to open 600 s window; node -> scan for CELL-JOIN beacons.
+    while :; do sleep 60; done ;;
+  status) cat /etc/cell-release; cat /tmp/cell/state 2>/dev/null ;;
+  *) echo "usage: cell-agent run|status"; exit 1 ;;
+esac
