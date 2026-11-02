@@ -33,3 +33,6 @@ CELL-029 | P1 | hw | PSE passthrough: part selection, power budget at 25.5 W in 
 CELL-030 | P0 | ci | Generate usign keypair offline, store USIGN_SECKEY in repo secrets, commit public key to firmware/files/etc/opkg/keys | todo
 CELL-031 | P1 | ctl | cellctl serve: SQLite mode, enroll + heartbeat gRPC, fleet REST, embed app/dist | todo
 CELL-032 | P2 | app | BLE provisioning over nRF52840 via Capacitor (iOS requires native wrapper) | todo
+CELL-033 | P1 | ctl | OIDC SSO (Entra, Google, Okta, magic link) + per-site RBAC (Owner/Admin/Installer/Viewer) | todo
+CELL-034 | P1 | ctl | Tenant model Org>Site>Cell>Unit + audit log of every join, promotion, OTA, config change | todo
+CELL-035 | P1 | ops | Hosting: VPS + Postgres + Caddy TLS, app.<celldomain>, outbound-only unit transport on 443 | todo
