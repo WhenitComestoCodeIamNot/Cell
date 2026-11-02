@@ -1,0 +1,3 @@
+firmware/out/
+*.bak
+hardware/**/*-backups/
