@@ -1,7 +1,7 @@
 # Backlog (single source of truth)
 Format: `CELL-nnn | P0-P3 | area | title | status`
 
-CELL-001 | P0 | hw | Choose dev board for hw-revA prototype | done (ADR 0007: OpenWrt One + Cudy WR3000P)
+CELL-001 | P0 | hw | Choose dev board | superseded by ADR 0016 (straight to carrier)
 CELL-002 | P0 | fw | OpenWrt ImageBuilder config + GitHub Action producing signed sysupgrade | in-progress (build.sh + workflow written, needs first CI run + USIGN_SECKEY secret)
 CELL-003 | P0 | fw | HW rev detection via strap resistors + EEPROM, LED code on mismatch | todo
 CELL-004 | P0 | fw | A/B partition layout + auto-rollback on boot fail | todo
@@ -13,7 +13,7 @@ CELL-009 | P1 | ctl | Canary rollout + telemetry MVP | todo
 CELL-010 | P1 | spec | Decide SPAKE2 vs SAE | todo
 CELL-011 | P1 | spec | Seed also relays traffic? | todo
 CELL-012 | P1 | spec | Two-Seed conflict resolution test cases | todo
-CELL-013 | P1 | hw | Carrier board revA in KiCad: 802.3at PoE PD, single-port PSE passthrough, 2x RJ45, nRF52840 module + UART, DC-DC, DIP, button, LED, USB-C fallback | todo
+CELL-013 | P0 | hw | Carrier board revA in KiCad: 802.3at PoE PD, single-port PSE passthrough, 2x RJ45, nRF52840 module + UART, DC-DC, DIP, button, LED, USB-C fallback | todo
 CELL-014 | P2 | hw | Enclosure v0 on K2 (proxy for metal shell), door-adjacent mount, SoM thermal check | todo
 CELL-015 | P2 | ci | compat-gate job parsing COMPAT.md | todo
 CELL-016 | P2 | ci | HIL bench: 3 units, flash on PR, join + iperf test | todo
@@ -22,7 +22,7 @@ CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | 
 CELL-019 | P3 | biz | Cert vendor quotes (unintentional radiator, US + EU) | todo
 CELL-020 | P1 | biz | COGS tracker: live BOM cost per HW rev, alarm if landed > $45 (ADR 0009) | todo
 CELL-021 | P2 | hw | Quote metal shell at 500/1k/5k (sheet vs die-cast) | todo
-CELL-022 | P0 | hw | Order Sprint 0 and 1 parts (sprints/sprint-00.md buy list) | ordered 2026-11-02, two kits, four units
+CELL-022 | P0 | hw | Order parts per ADR 0016 list (sprints/sprint-00.md) | ordering 2026-11-02
 CELL-023 | P1 | hw | MikroBUS breakout: 8-pos DIP on GPIO + 24C02 EEPROM on I2C | todo
 CELL-024 | P1 | biz | Provisional patent: P1+P2 from docs/MARKET.md, before first public demo | todo
 CELL-025 | P2 | fw | Per-room bandwidth cap + client isolation | dropped (ADR 0013, inherited from upstream via 4-addr bridge)
@@ -48,3 +48,6 @@ CELL-044 | P1 | fw | Gateway election: any unit with good upstream can uplink, c
 CELL-045 | P1 | fw | Peer firmware distribution: cache, announce, fetch with resume, verify before install (ADR 0015) | todo
 CELL-046 | P2 | ctl | Rollout view shows propagation: who got the image from whom, when | todo
 CELL-047 | P1 | hw | Second WR3000P for multi-hop test | covered by CELL-022 (four units)
+CELL-048 | P0 | hw | Pick MT7981B module: HLK-RM65 vs Openembed SOM-7981 (RAM, pinout, cert, price, MOQ, OpenWrt state). ADR 0007b | todo
+CELL-049 | P0 | fw | Module bring-up: DTS, bootloader, PoE PD/PSE GPIO, nRF52840 UART, strap/EEPROM pins; add hw-revA profile | todo
+CELL-050 | P0 | hw | Carrier revA outline + jack positions frozen, handed to enclosure (CELL-014) | todo
