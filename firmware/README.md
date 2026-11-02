@@ -12,6 +12,6 @@ out/                   Build output (gitignored)
 Build locally: `./ci/build.sh hw-revA` (needs ~4 GB disk, Linux, no root).
 
 ## Package policy (ADR 0008)
-Included: kernel, mt76 driver, hostapd (WPA3), wpa_supplicant, netifd, uci, procd, dropbear, cell-agent, usign.
+Included: kernel, mt76 driver, wpad-mbedtls (full hostapd + wpa_supplicant: WPA3/SAE, 802.11s mesh, 802.11k/v/r), netifd, uci, procd, dropbear, cell-agent, usign.
 Excluded: LuCI, uhttpd, dnsmasq (no DHCP server on a Node), odhcpd, ppp, firewall4 rules beyond the base, any VPN, any USB storage.
 Add a package only via PR with a one-line reason in the profile file.
