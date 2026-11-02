@@ -22,7 +22,7 @@ CELL-018 | P3 | biz | Reseller margin model + controller subscription pricing | 
 CELL-019 | P3 | biz | Cert vendor quotes (unintentional radiator, US + EU) | todo
 CELL-020 | P1 | biz | COGS tracker: live BOM cost per HW rev, alarm if landed > $45 (ADR 0009) | todo
 CELL-021 | P2 | hw | Quote metal shell at 500/1k/5k (sheet vs die-cast) | todo
-CELL-022 | P0 | hw | Order Sprint 0 parts (see sprints/sprint-00.md buy list) | todo
+CELL-022 | P0 | hw | Order Sprint 0 and 1 parts (sprints/sprint-00.md buy list) | ordering 2026-11-02
 CELL-023 | P1 | hw | MikroBUS breakout: 8-pos DIP on GPIO + 24C02 EEPROM on I2C | todo
 CELL-024 | P1 | biz | Provisional patent: P1+P2 from docs/MARKET.md, before first public demo | todo
 CELL-025 | P2 | fw | Per-room bandwidth cap + client isolation | dropped (ADR 0013, inherited from upstream via 4-addr bridge)
