@@ -57,7 +57,7 @@ CELL-053 | P1 | hw | End-product safety evaluation (IEC 62368-1) with encapsulat
 CELL-054 | P0 | hw | Power section design: 12 V bus, IRM-30-12, PoE PD (12 V out), USB-C PD sink 12 V, ORing mains > PoE > USB-C, 4S LiFePO4 on bus, 12-48 V boost for PSE | todo
 CELL-055 | P1 | hw | 4S LiFePO4 pack selection (certified, 12.8 V, 10-15 Wh) + charger IC (ADR 0018) | todo
 CELL-056 | P1 | fw | Low-power mode on battery: guest radio off, mesh + heartbeat on | todo
-CELL-057 | P0 | hw | RTC supercap + hold-up capacitance + last-gasp power-loss event | todo
+CELL-057 | P0 | hw | DS3231-class I2C RTC on carrier (no RTC in MT7981B/RM65) + supercap hold-up + last-gasp power-loss event | todo
 CELL-058 | P0 | fw | Event schema, metrics, flash ring buffer, store-and-forward (specs/logging-alerting.md) | todo
 CELL-059 | P1 | ctl | Event and metric ingest, index, search, retention | todo
 CELL-060 | P1 | ctl | Alert rules engine with default rules, routing, quiet hours, escalation; channels email/SMS/Slack/Teams/PagerDuty/webhook | todo

@@ -28,6 +28,7 @@ Power bench parts (ADR 0017, 0018, 0019; 12 V bus), about $145:
 | 4 | LiFePO4 18650, 3.2 V 1500 mAh | $28 | Amazon |
 | 1 | 4S LiFePO4 BMS board (12.8 V) + 4x18650 holder | $12 | Amazon |
 | 2 | 5.5 V 1 F supercapacitor | $6 | Amazon |
+| 1 | DS3231 RTC module (I2C) | $8 | Amazon |
 | 1 | Bench PSU 0-60 V 5 A adjustable | $60-90 | Amazon |
 | 1 | USB-C PD trigger board, 12 V | $8 | Amazon |
 Surge parts (TVS, MOV, GDT, chokes), charger IC and ORing controller go on the carrier and are placed by JLCPCB; not hand-bought.
