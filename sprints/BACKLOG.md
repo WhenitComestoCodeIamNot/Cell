@@ -55,7 +55,7 @@ CELL-051 | P2 | hw | Region cord kits (C7 to NEMA 1-15, CEE 7/16, BS 1363) for t
 CELL-052 | P1 | hw | Power budget and thermal check: 25.5 W in, 15.4 W passthrough, sealed metal shell | todo
 CELL-053 | P1 | hw | End-product safety evaluation (IEC 62368-1) with encapsulated AC-DC module: scope, lab quotes, timeline | todo
 CELL-054 | P0 | hw | Power section design: 12 V bus, IRM-30-12, PoE PD (12 V out), USB-C PD sink 12 V, ORing mains > PoE > USB-C, 4S LiFePO4 on bus, 12-48 V boost for PSE | todo
-CELL-055 | P1 | hw | 4S LiFePO4 pack selection (certified, 12.8 V, 10-15 Wh) + charger IC (ADR 0018) | todo
+CELL-055 | P1 | hw | 4S LiFePO4 pack selection (certified, 12.8 V, 10-15 Wh) + charger IC (ADR 0018); also source 4 bench cells, all US retail out of stock 2026-11-06 | todo
 CELL-056 | P1 | fw | Low-power mode on battery: guest radio off, mesh + heartbeat on | todo
 CELL-057 | P0 | hw | DS3231-class I2C RTC on carrier (no RTC in MT7981B/RM65) + supercap hold-up + last-gasp power-loss event | todo
 CELL-058 | P0 | fw | Event schema, metrics, flash ring buffer, store-and-forward (specs/logging-alerting.md) | todo

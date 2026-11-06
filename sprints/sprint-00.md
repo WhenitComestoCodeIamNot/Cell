@@ -25,8 +25,7 @@ Power bench parts (ADR 0017, 0018, 0019; 12 V bus), about $145:
 |---|---|---|---|
 | 1 | Mean Well IRM-30-12 encapsulated AC-DC module | $15 | Mouser, Amazon |
 | 1 | IEC C8 panel inlet + C7 cord | $10 | Amazon |
-| 4 | LiFePO4 18650, 3.2 V 1500 mAh | $28 | Amazon |
-| 1 | 4S LiFePO4 BMS board (12.8 V) + 4x18650 holder | $12 | Amazon |
+| 4 | LiFePO4 cells 3.2 V (18650/26650/32650) + 4S BMS + holder | $40 | DEFERRED 2026-11-06: no stock at Amazon, 18650BatteryStore or Battery Hookup. Re-source with CELL-055 |
 | 2 | 5.5 V 1 F supercapacitor | $6 | Amazon |
 | 1 | DS3231 RTC module (I2C) | $8 | Amazon |
 | 1 | Bench PSU 0-60 V 5 A adjustable | $60-90 | Amazon |
